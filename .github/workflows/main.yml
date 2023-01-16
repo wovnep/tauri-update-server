@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: user/app:latest
+          tags: wovnep/tauri-update-server:${{ github.ref_name }}
           
       - name: Docker Hub README update
         uses: peter-evans/dockerhub-description@v3
