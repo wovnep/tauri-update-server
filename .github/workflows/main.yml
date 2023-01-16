@@ -1,6 +1,9 @@
+name: docker-build
+
 on:
   push:
-    tag:
+    tags:
+      - *
 
 jobs:
   docker-build:
