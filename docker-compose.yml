@@ -1,7 +1,7 @@
 services:
   updater:
     container_name: updater
-    image: wovnep/tauri-update-server:0.1.0
+    image: wovnep/tauri-update-server:0.2.1
     ports:
       - "3000:8080"
     environment:
@@ -10,3 +10,4 @@ services:
       - API_KEY=${API_KEY}
       - DEFAULT_LANG=en-US
       - SIGNATURE=true
+      - TAG_STRUCTURE=v

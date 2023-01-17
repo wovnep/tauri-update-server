@@ -16,3 +16,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: wovnep/tauri-update-server
+          short-description: ${{ github.event.repository.description }}

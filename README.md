@@ -12,6 +12,7 @@ npm run build && npm start
 ```
 
 In `tauri.conf.json`
+Replace http://localhost:8080 with your hostname. Make sure to add all the query parameters.
 ```json
   ...
   "updater": {
@@ -30,8 +31,9 @@ In `tauri.conf.json`
 #### Image:
 
 ```
-docker pull wovnep/tauri-update-server:latest
+docker pull wovnep/tauri-update-server:0.2.1
 ```
+
 #### CLI usage:
 
 ```bash
@@ -42,7 +44,7 @@ docker run \
   -e API_KEY='xxxxxxxx' \
   -e DEFAULT_LANG='en-US' \
   -e SIGNATURE='true' \
-  wovnep/tauri-update-server:latest
+  wovnep/tauri-update-server:0.2.1
 ```
 
 #### Docker compose:
@@ -51,7 +53,7 @@ docker run \
 services:
   update-server:
     container_name: Tauri update server
-    image: wovnep/tauri-update-server:latest
+    image: wovnep/tauri-update-server:0.2.1
     ports:
       - "3000:8080"
     environment:
@@ -62,6 +64,7 @@ services:
       - DEFAULT_LANG=en-US
       - SIGNATURE=true
 ```
+
 ## Environment variables
 
 |Name					|Required			|Default      |Description|	
