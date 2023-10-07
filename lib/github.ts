@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config({ override: true });
 
 const baseURL = `https://api.github.com/repos/${process.env.USERNAME}/${process.env.REPO}/releases/latest`;
 
