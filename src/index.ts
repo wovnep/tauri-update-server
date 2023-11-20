@@ -16,9 +16,6 @@ interface Parameters {
 app.get('/update', async (req: Request<{}, {}, {}, Parameters>, res: Response) => {
     if (req.query.current_version && req.query.target && req.query.arch) {
         const latest = await github();
-        if (latest.message === 'Not Found') {
-            res.status(204).send();
-        }
         if (compare(latest.tag_name, req.query.current_version, '>')) {
             const version = process.env.TAG_STRUCTURE ? latest.tag_name.split(process.env.TAG_STRUCTURE)[1] : latest.tag_name;
             const release = getReleases(latest.assets, req.query.target, req.query.arch);
@@ -37,4 +34,4 @@ app.get('/update', async (req: Request<{}, {}, {}, Parameters>, res: Response) =
         });
     }
 });
-app.listen(8080, '0.0.0.0', () => console.log(`Server listening on http://0.0.0.0:8080/`));
+app.listen(8080, '0.0.0.0', () => console.log(`Server started at http://0.0.0.0:8080/`));
