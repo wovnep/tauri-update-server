@@ -31,7 +31,7 @@ Replace http://localhost:8080 with your hostname. Make sure to add all the query
 #### Image:
 
 ```
-docker pull wovnep/tauri-update-server:0.2.1
+docker pull wovnep/tauri-update-server:latest
 ```
 
 #### CLI usage:
@@ -44,7 +44,7 @@ docker run \
   -e API_KEY='xxxxxxxx' \
   -e DEFAULT_LANG='en-US' \
   -e SIGNATURE='true' \
-  wovnep/tauri-update-server:0.2.1
+  wovnep/tauri-update-server:latest
 ```
 
 #### Docker compose:
@@ -53,7 +53,7 @@ docker run \
 services:
   update-server:
     container_name: Tauri update server
-    image: wovnep/tauri-update-server:0.2.1
+    image: wovnep/tauri-update-server:latest
     ports:
       - "3000:8080"
     environment:
