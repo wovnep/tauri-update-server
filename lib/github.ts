@@ -21,3 +21,13 @@ export const getSignature = async (assetsURL: string) => {
     });
     return response.text();
 };
+export const getDirectUrl = async(assets_url: string) => {
+    const response = await fetch(assets_url, {
+        headers: {
+            Accept: 'application/octet-stream',
+            Authorization: process.env.API_KEY
+        },
+        redirect: 'manual',
+    });
+    return response.headers.get('location')
+}
