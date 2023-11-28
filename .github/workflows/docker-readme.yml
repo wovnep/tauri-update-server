@@ -1,6 +1,12 @@
 name: docker-readme
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
+      - .github/workflows/docker-readme.yml
   workflow_dispatch:
 
 jobs:
